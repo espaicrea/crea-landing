@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-mondrian-red: #E30022;
+  --color-mondrian-blue: #0048BA;
+  --color-mondrian-yellow: #FFD700;
+  --color-mondrian-black: #000000;
+  --color-mondrian-white: #F0F0F0;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased selection:bg-mondrian-yellow selection:text-black;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #fff; 
+  border-left: 2px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E30022; 
+}
