@@ -9,19 +9,19 @@ export default function Home() {
         <div className="flex flex-col md:flex-row">
           <div className="bg-black text-white p-6 flex items-center justify-center md:justify-start w-full md:w-auto md:min-w-[200px]">
             <div className="flex items-center gap-2">
-              <Zap className="w-6 h-6 fill-white" />
+              {/* <Zap className="w-6 h-6 fill-white" /> */}
               <span className="text-3xl font-extrabold tracking-tight">[crea]</span>
             </div>
           </div>
           <nav className="flex-grow flex flex-wrap md:flex-nowrap border-t-4 md:border-t-0 md:border-l-4 border-black">
             <Link className="flex-1 flex items-center justify-center py-4 px-6 text-lg font-bold hover:bg-mondrian-yellow transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#">Qui som?</Link>
-            <Link className="flex-1 flex items-center justify-center py-4 px-6 text-lg font-bold hover:bg-mondrian-blue hover:text-white transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#">La Missió</Link>
+            <Link className="flex-1 flex items-center justify-center py-4 px-6 text-lg font-bold hover:bg-mondrian-blue hover:text-white transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#mission">La Missió</Link>
             <Link className="flex-1 flex items-center justify-center py-4 px-6 text-lg font-bold hover:bg-mondrian-red hover:text-white transition-colors" href="#">Propera Trobada</Link>
           </nav>
           <div className="hidden md:flex items-stretch border-l-4 border-black">
-            <button className="bg-mondrian-red text-white font-extrabold px-8 hover:bg-black transition-colors uppercase tracking-wider text-sm">
+            <Link className="bg-mondrian-red text-white font-extrabold px-8 hover:bg-black transition-colors uppercase tracking-wider text-sm flex items-center" href="https://lu.ma/crea?utm_source=landing" target="_blank" rel="noopener noreferrer">
               Apunta&apos;t
-            </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -42,10 +42,10 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <button className="h-14 px-8 bg-black text-white text-lg font-extrabold hover:bg-mondrian-red border-2 border-black transition-all flex items-center justify-center gap-2">
+              <Link className="h-14 px-8 bg-black text-white text-lg font-extrabold hover:bg-mondrian-red border-2 border-black transition-all flex items-center justify-center gap-2" href="https://lu.ma/crea?utm_source=landing" target="_blank" rel="noopener noreferrer">
                 PROPERA TROBADA
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </Link>
               <button className="h-14 px-8 bg-white text-black text-lg font-extrabold border-4 border-black hover:bg-mondrian-yellow transition-all">
                 SABER-NE MÉS
               </button>
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             <div className="row-span-2 grid grid-cols-2">
               <div className="bg-mondrian-red border-r-4 border-black flex items-center justify-center">
-                <Zap className="text-white w-16 h-16 fill-white" />
+                {/* <Zap className="text-white w-16 h-16 fill-white" /> */}
               </div>
               <div className="bg-white p-6 flex flex-col justify-center">
                 <h3 className="font-extrabold text-xl mb-1">BARCELONA</h3>
@@ -75,9 +75,11 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
-          <div className="bg-black text-white p-8 md:p-12 flex items-center justify-center md:[writing-mode:vertical-rl] md:rotate-180 border-b-4 md:border-b-0 md:border-r-4 border-white md:border-black">
-            <h2 className="text-4xl md:text-6xl font-extrabold uppercase tracking-widest text-center md:text-left">La Missió</h2>
+        <section id="mission" className="grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
+          <div className="bg-black text-white p-8 md:p-12 flex items-center justify-center lg:rotate-180 border-b-4 md:border-b-0 md:border-r-4 border-white md:border-black">
+            <div className="md:rotate-270 lg:rotate-0">
+              <h2 className="text-4xl md:text-7xl font-extrabold uppercase tracking-widest text-center md:text-left">La<br></br> Missió</h2>
+            </div>
           </div>
           <div className="col-span-2 grid grid-rows-2">
             <div className="p-8 md:p-12 border-b-4 border-black flex flex-col justify-center bg-mondrian-white">
@@ -185,11 +187,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <div>
               <div className="bg-white text-black inline-flex items-center gap-2 px-4 py-2 mb-4 font-bold border-2 border-white">
-                <Zap className="w-5 h-5 fill-black" />
+                {/* <Zap className="w-5 h-5 fill-black" /> */}
                 <span className="text-xl">[crea]</span>
               </div>
               <p className="text-gray-400 font-bold max-w-xs mb-6">
-                Fent realitat les idees dels estudiants de Barcelona des del 2023.
+                Fent realitat les idees dels estudiants de Barcelona des del 2025.
               </p>
               <div className="flex flex-wrap gap-4 text-sm font-bold uppercase tracking-wider">
                 <Link className="hover:text-mondrian-yellow transition-colors" href="#">Sobre nosaltres</Link>
@@ -201,7 +203,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-start md:items-end gap-2">
               <p className="text-xs font-bold text-gray-500 uppercase">
-                © 2023 [crea]. Tots els drets reservats.
+                © 2025 [crea]. Tots els drets reservats.
               </p>
               <div className="h-2 w-full max-w-[200px] flex">
                 <div className="h-full w-1/3 bg-mondrian-red"></div>
