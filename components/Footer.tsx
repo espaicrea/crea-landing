@@ -26,11 +26,11 @@ export default function Footer() {
                 Fent realitat les idees dels estudiants de Barcelona des del 2025.
               </p>
               <div className="flex flex-wrap gap-4 text-sm font-bold uppercase tracking-wider">
-                <Link className="hover:text-mondrian-yellow transition-colors" href="#about" onClick={(event) => handleHashNavigation(event, '#about')}>Sobre nosaltres</Link>
+                <Link className="hover:text-mondrian-red transition-colors" href="https://legal.espaicrea.cat/code-of-conduct">Codi de conducta</Link>
                 <span className="text-gray-600">/</span>
-                <Link className="hover:text-mondrian-red transition-colors" href="#" onClick={(event) => handleHashNavigation(event, '#')}>Normes</Link>
+                <Link className="hover:text-mondrian-yellow transition-colors" href="https://legal.espaicrea.cat/privacy-policy">Política de privacitat</Link>
                 <span className="text-gray-600">/</span>
-                <Link className="hover:text-mondrian-blue transition-colors" href="#social" onClick={(event) => handleHashNavigation(event, '#social')}>Contacte</Link>
+                <Link className="hover:text-mondrian-blue transition-colors" href="https://legal.espaicrea.cat/terms-and-conditions">Termes i condicions</Link>
               </div>
             </div>
             <div className="flex flex-col items-start md:items-end gap-2">
