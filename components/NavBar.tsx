@@ -2,14 +2,16 @@
 'use client';
 
 import Link from 'next/link';
-import { MouseEvent, useRef } from 'react';
+import { useRef } from 'react';
 import { useScrollAnimator } from '@/components/utils/scrollAnimator';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function NavBar() {
   const headerRef = useRef<HTMLElement | null>(null);
   const { handleHashNavigation } = useScrollAnimator({
     getStickyHeaderHeight: () => headerRef.current?.offsetHeight ?? 0,
   });
+  const { copy } = useLanguage();
   
   return (
     <header id="main-header" ref={headerRef} className="border-b-0 md:border-b-4 border-black bg-white sticky top-0 z-50">
@@ -21,16 +23,16 @@ export default function NavBar() {
             </div>
           </div>
           <nav className="flex-grow flex flex-wrap md:flex-nowrap border-t-4 md:border-t-0 md:border-l-4 border-black">
-            <Link className="flex-1 flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-yellow hover:border-mondrian-yellow transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#about" onClick={(event) => handleHashNavigation(event, '#about')}>Qui som?</Link>
-            <Link className="flex-1 flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-blue hover:text-white hover:border-mondrian-blue transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#mission" onClick={(event) => handleHashNavigation(event, '#mission')}>La Missió</Link>
-            <Link className="hidden md:flex-1 md:flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-red hover:text-white hover:border-mondrian-red transition-colors border-b-4 md:border-b-0 md:border-r-0" href="#social" onClick={(event) => handleHashNavigation(event, '#social')}>Troba&apos;ns</Link>
-             <Link className="md:hidden flex-1 flex items-center justify-center py-2 px-4 md:py-4 text-base font-bold hover:bg-mondrian-red hover:text-white hover:border-mondrian-red transition-colors border-b-4 " href="https://lu.ma/crea?utm_source=landing" target="_blank" rel="noopener noreferrer">
-              Apunta&apos;t
+            <Link className="flex-1 flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-yellow transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#about" onClick={(event) => handleHashNavigation(event, '#about')}>{copy.nav.about}</Link>
+            <Link className="flex-1 flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-blue hover:text-white transition-colors border-b-4 md:border-b-0 md:border-r-4 border-black" href="#mission" onClick={(event) => handleHashNavigation(event, '#mission')}>{copy.nav.mission}</Link>
+            <Link className="hidden md:flex-1 md:flex items-center justify-center py-2 px-4 md:py-4 md:px-6 text-base md:text-lg font-bold hover:bg-mondrian-red hover:text-white transition-colors border-b-4 md:border-b-0 md:border-r-0" href="#social" onClick={(event) => handleHashNavigation(event, '#social')}>{copy.nav.social}</Link>
+            <Link className="md:hidden flex-1 flex items-center justify-center py-2 px-4 text-base font-bold hover:bg-mondrian-red hover:text-white transition-colors border-b-4" href="https://lu.ma/crea?utm_source=landing" target="_blank" rel="noopener noreferrer">
+              {copy.nav.cta}
             </Link>
           </nav>
           <div className="hidden md:flex items-stretch border-l-4 border-black">
             <Link className="bg-mondrian-red text-white font-extrabold px-8 hover:bg-black transition-colors uppercase tracking-wider text-sm flex items-center" href="https://lu.ma/crea?utm_source=landing" target="_blank" rel="noopener noreferrer">
-              Apunta&apos;t
+              {copy.nav.cta}
             </Link>
           </div>
         </div>
