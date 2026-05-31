@@ -22,7 +22,7 @@ export default function Home() {
       <main className="flex-grow flex flex-col">
         <section className="grid grid-cols-1 lg:grid-cols-12 border-b-4 border-black min-h-[600px]">
           <div className="lg:col-span-7 flex flex-col border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-16 justify-center bg-white relative">
-            <div className="absolute top-0 right-0 lg:right-auto lg:left-0 w-40 h-18 bg-mondrian-yellow lg:border-r-4 lg:border-b-4 border-l-4 lg:border-l-0 border-b-4 border-black">
+            <div className="absolute top-0 right-0 lg:right-auto lg:left-0 w-42 h-14 bg-mondrian-yellow lg:border-r-4 lg:border-b-4 border-l-4 lg:border-l-0 border-b-4 border-black">
               <div className="flex h-full" aria-label={copy.nav.languageLabel}>
                 {availableLocales.map((language, index) => (
                   <button
