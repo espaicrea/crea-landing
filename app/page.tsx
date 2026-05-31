@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="mission" className="scroll-mt-52 md:scroll-mt-36 grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
+        <section id="mission" className="scroll-mt-32 md:scroll-mt-36 grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
           <div className="bg-black text-white p-8 md:p-12 flex items-center justify-center lg:rotate-180 border-b-4 md:border-b-0 md:border-r-4 border-white md:border-black">
             <div className="md:rotate-270 lg:rotate-0">
               <h2 className="text-4xl md:text-7xl font-extrabold uppercase tracking-widest text-center md:text-left">{copy.mission.titleLines[0]}<br></br> {copy.mission.titleLines[1]}</h2>
