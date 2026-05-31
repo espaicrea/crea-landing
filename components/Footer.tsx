@@ -1,16 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useScrollAnimator } from '@/components/utils/scrollAnimator';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function Footer() {
-  const { handleHashNavigation } = useScrollAnimator({
-    getStickyHeaderHeight: () => {
-      const headerElement = document.getElementById('main-header');
-      return headerElement?.offsetHeight ?? 0;
-    },
-  });
-
+  const { copy } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,19 +17,19 @@ export default function Footer() {
                 <span className="text-xl">[crea]</span>
               </div>
               <p className="text-gray-400 font-bold max-w-xs mb-6">
-                Fent realitat les idees dels estudiants de Barcelona des del 2025.
+                {copy.footer.description}
               </p>
               <div className="flex flex-wrap gap-4 text-sm font-bold uppercase tracking-wider">
-                <Link className="hover:text-mondrian-red transition-colors" href="https://legal.espaicrea.cat/code-of-conduct">Codi de conducta</Link>
+                <Link className="hover:text-mondrian-red transition-colors" href="https://legal.espaicrea.cat/code-of-conduct">{copy.footer.codeOfConduct}</Link>
                 <span className="text-gray-600">/</span>
-                <Link className="hover:text-mondrian-yellow transition-colors" href="https://legal.espaicrea.cat/privacy-policy">Política de privacitat</Link>
+                <Link className="hover:text-mondrian-yellow transition-colors" href="https://legal.espaicrea.cat/privacy-policy">{copy.footer.privacyPolicy}</Link>
                 <span className="text-gray-600">/</span>
-                <Link className="hover:text-mondrian-blue transition-colors" href="https://legal.espaicrea.cat/terms-and-conditions">Termes i condicions</Link>
+                <Link className="hover:text-mondrian-blue transition-colors" href="https://legal.espaicrea.cat/terms-and-conditions">{copy.footer.termsAndConditions}</Link>
               </div>
             </div>
             <div className="flex flex-col items-start md:items-end gap-2">
               <p className="text-xs font-bold text-gray-500 uppercase">
-                ©&nbsp;{currentYear}&nbsp;[crea]. Tots els drets reservats.
+                ©&nbsp;{currentYear}&nbsp;[crea]. {copy.footer.rightsReserved}
               </p>
               <div className="h-2 w-full max-w-[200px] flex">
                 <div className="h-full w-1/3 bg-mondrian-red"></div>
