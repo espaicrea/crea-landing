@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { getMessages, LANGUAGE_COOKIE, locales, type Locale } from '@/lib/i18n';
+import { getMessages, getPageMetadata, LANGUAGE_COOKIE, locales, type Locale } from '@/lib/i18n';
 
 type LanguageContextValue = {
   locale: Locale;
@@ -19,14 +19,14 @@ function persistLocale(locale: Locale) {
 }
 
 function syncDocument(locale: Locale) {
-  const copy = getMessages(locale);
+  const metadata = getPageMetadata(locale, window.location.pathname);
 
   document.documentElement.lang = locale;
-  document.title = copy.metadata.title;
+  document.title = metadata.title;
 
   const descriptionElement = document.querySelector('meta[name="description"]');
   if (descriptionElement) {
-    descriptionElement.setAttribute('content', copy.metadata.description);
+    descriptionElement.setAttribute('content', metadata.description);
   }
 }
 

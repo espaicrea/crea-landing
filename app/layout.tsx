@@ -16,8 +16,19 @@ export async function generateMetadata(): Promise<Metadata> {
   const copy = getMessages(locale);
 
   return {
+    metadataBase: new URL('https://espaicrea.cat'),
     title: copy.metadata.title,
     description: copy.metadata.description,
+    alternates: {
+      canonical: '/',
+    },
+    openGraph: {
+      title: copy.metadata.title,
+      description: copy.metadata.description,
+      url: '/',
+      type: 'website',
+      siteName: '[crea]',
+    },
   };
 }
 

@@ -7,12 +7,11 @@ import NavBar from '@/components/NavBar';
 import { Users, Rocket, Calendar, Instagram, ExternalLinkIcon, Hammer } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/components/LanguageProvider';
-import { localeLabels } from '@/lib/i18n';
-import { cn } from '@/lib/utils';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Home() {
   const [isBlue, setIsBlue] = useState(true);
-  const { locale, setLocale, availableLocales, copy } = useLanguage();
+  const { copy } = useLanguage();
   
 
   return (
@@ -22,27 +21,7 @@ export default function Home() {
       <main className="flex-grow flex flex-col">
         <section className="grid grid-cols-1 lg:grid-cols-12 border-b-4 border-black min-h-[600px]">
           <div className="lg:col-span-7 flex flex-col border-b-4 lg:border-b-0 lg:border-r-4 border-black p-8 lg:p-16 justify-center bg-white relative">
-            <div className="absolute top-0 right-0 lg:right-auto lg:left-0 w-42 h-14 bg-mondrian-yellow lg:border-r-4 lg:border-b-4 border-l-4 lg:border-l-0 border-b-4 border-black">
-              <div className="flex h-full" aria-label={copy.nav.languageLabel}>
-                {availableLocales.map((language, index) => (
-                  <button
-                    key={language}
-                    type="button"
-                    aria-pressed={locale === language}
-                    className={cn(
-                      'flex-1 flex items-center justify-center text-xs font-extrabold uppercase transition-colors cursor-pointer',
-                      locale === language
-                        ? 'bg-white text-black'
-                        : 'bg-mondrian-yellow text-black hover:bg-black hover:text-white',
-                      index < availableLocales.length - 1 && 'border-r-4 border-black'
-                    )}
-                    onClick={() => setLocale(language)}
-                  >
-                    {localeLabels[language]}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <LanguageSwitcher className="absolute top-0 right-0 lg:right-auto lg:left-0 w-42 border-t-0 border-r-0 lg:border-r-4 border-b-4 border-l-4 lg:border-l-0" />
             <div className="mt-12 mb-8">
               <span className="inline-block bg-black text-white px-3 py-1 text-sm font-bold mb-4 uppercase tracking-widest">{copy.hero.eyebrow}</span>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-black leading-tight mb-6">
@@ -59,7 +38,7 @@ export default function Home() {
                 {copy.hero.nextEvent}
                 <ExternalLinkIcon className="w-5 h-5" />
               </Link>
-              <Link className="h-14 px-8 bg-white text-black text-lg font-extrabold border-4 border-black hover:bg-mondrian-yellow transition-all py-2.5" href="https://instagram.com/crea.bcn" target="_blank" rel="noopener noreferrer">
+              <Link className="h-14 px-8 bg-white text-black text-lg font-extrabold border-4 border-black hover:bg-mondrian-yellow transition-all py-2.5 flex items-center justify-center" href="/qui-som">
                 {copy.hero.learnMore}
               </Link>
             </div>
@@ -73,6 +52,7 @@ export default function Home() {
                 fill
                 referrerPolicy="no-referrer"
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
               />
               
               <div className="absolute inset-0 border-4 border-transparent hover:border-mondrian-yellow pointer-events-none transition-all duration-300"></div>
@@ -148,12 +128,16 @@ export default function Home() {
             </div>
             <div className="md:col-span-1 md:row-span-2 border-4 border-black bg-mondrian-blue relative group overflow-hidden min-h-[200px]">
               <div className="absolute top-0 right-0 bg-white text-black px-4 py-2 font-bold z-10 border-l-4 border-b-4 border-black">{copy.about.aboutTag}</div>
-              <div
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-300" 
-              > 
-              <p className="text-white text-xl lg:text-2xl font-bold leading-tight p-6 mt-10 sm:mt-14 lg:mt-10">
-                {copy.about.description}
-              </p>
+              <div className="h-full flex flex-col items-start justify-between gap-6 p-6 pt-16 text-white opacity-90 hover:opacity-100 transition-opacity duration-300">
+                <p className="text-xl lg:text-2xl font-bold leading-tight">
+                  {copy.about.description}
+                </p>
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center bg-white px-4 py-3 text-sm font-extrabold uppercase text-black border-4 border-black hover:bg-mondrian-yellow transition-colors"
+                  href="/qui-som"
+                >
+                  {copy.about.readMore}
+                </Link>
               </div>
             </div>
             <div className="border-4 border-black bg-mondrian-red flex items-center justify-center p-6 min-h-[150px]">

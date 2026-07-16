@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/components/LanguageProvider';
+import { organization } from '@/lib/organization';
 
 export default function Footer() {
   const { copy } = useLanguage();
@@ -19,7 +20,21 @@ export default function Footer() {
               <p className="text-gray-400 font-bold max-w-xs mb-6">
                 {copy.footer.description}
               </p>
+              <div className="border-l-4 border-mondrian-yellow pl-4 mb-6 text-sm leading-relaxed">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-1">
+                  {copy.footer.legalIdentityLabel}
+                </p>
+                <p className="font-extrabold text-white">{organization.legalName}</p>
+                <p className="text-gray-300">
+                  {copy.footer.taxIdLabel} {organization.taxId} · {organization.location}
+                </p>
+                <Link className="text-gray-300 underline underline-offset-4 hover:text-white" href={`mailto:${organization.email}`}>
+                  {organization.email}
+                </Link>
+              </div>
               <div className="flex flex-wrap gap-4 text-sm font-bold uppercase tracking-wider">
+                <Link className="hover:text-white transition-colors" href="/qui-som">{copy.footer.aboutOrganization}</Link>
+                <span className="text-gray-600">/</span>
                 <Link className="hover:text-mondrian-red transition-colors" href="https://legal.espaicrea.cat/code-of-conduct">{copy.footer.codeOfConduct}</Link>
                 <span className="text-gray-600">/</span>
                 <Link className="hover:text-mondrian-yellow transition-colors" href="https://legal.espaicrea.cat/privacy-policy">{copy.footer.privacyPolicy}</Link>
