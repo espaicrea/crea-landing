@@ -79,37 +79,6 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="mission" className="scroll-mt-32 md:scroll-mt-36 grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
-          <div className="bg-black text-white p-8 md:p-12 flex items-center justify-center lg:rotate-180 border-b-4 md:border-b-0 md:border-r-4 border-white md:border-black">
-            <div className="md:rotate-270 lg:rotate-0">
-              <h2 className="text-4xl md:text-7xl font-extrabold uppercase tracking-widest text-center md:text-left">{copy.mission.titleLines[0]}<br></br> {copy.mission.titleLines[1]}</h2>
-            </div>
-          </div>
-          <div className="col-span-2 grid grid-rows-2">
-            <div className="p-8 md:p-12 border-b-4 border-black flex flex-col justify-center bg-mondrian-white">
-              <p className="text-2xl md:text-3xl font-bold leading-tight">
-                {copy.mission.lead}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <div className="border-r-0 sm:border-r-4 border-b-4 sm:border-b-0 border-black p-8 bg-mondrian-yellow flex flex-col justify-between hover:bg-yellow-300 transition-colors">
-                <Users className="w-10 h-10 mb-4" />
-                <div>
-                  <h3 className="text-xl font-extrabold uppercase mb-2">{copy.mission.collaborationTitle}</h3>
-                  <p className="font-bold text-sm">{copy.mission.collaborationDescription}</p>
-                </div>
-              </div>
-              <div className="p-8 bg-white flex flex-col justify-between hover:bg-gray-50 transition-colors">
-                <Rocket className="w-10 h-10 mb-4 text-mondrian-blue" />
-                <div>
-                  <h3 className="text-xl font-extrabold uppercase mb-2">{copy.mission.growthTitle}</h3>
-                  <p className="font-bold text-sm">{copy.mission.growthDescription}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <section id="about" className="border-b-4 border-black bg-black p-4">
           <div className="bg-white border-4 border-black p-4 mb-4">
             <h2 className="text-3xl font-extrabold uppercase">{copy.about.title}</h2>
@@ -154,6 +123,37 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-mondrian-yellow/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span className="font-extrabold text-black text-xl uppercase text-center p-2">{copy.about.projectLabel}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="mission" className="scroll-mt-32 md:scroll-mt-36 grid grid-cols-1 md:grid-cols-3 border-b-4 border-black">
+          <div className="bg-black text-white p-8 md:p-12 flex items-center justify-center lg:rotate-180 border-b-4 md:border-b-0 md:border-r-4 border-white md:border-black">
+            <div className="md:rotate-270 lg:rotate-0">
+              <h2 className="text-4xl md:text-7xl font-extrabold uppercase tracking-widest text-center md:text-left">{copy.mission.titleLines[0]}<br></br> {copy.mission.titleLines[1]}</h2>
+            </div>
+          </div>
+          <div className="col-span-2 grid grid-rows-2">
+            <div className="p-8 md:p-12 border-b-4 border-black flex flex-col justify-center bg-mondrian-white">
+              <p className="text-2xl md:text-3xl font-bold leading-tight">
+                {copy.mission.lead}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <div className="border-r-0 sm:border-r-4 border-b-4 sm:border-b-0 border-black p-8 bg-mondrian-yellow flex flex-col justify-between hover:bg-yellow-300 transition-colors">
+                <Users className="w-10 h-10 mb-4" />
+                <div>
+                  <h3 className="text-xl font-extrabold uppercase mb-2">{copy.mission.collaborationTitle}</h3>
+                  <p className="font-bold text-sm">{copy.mission.collaborationDescription}</p>
+                </div>
+              </div>
+              <div className="p-8 bg-white flex flex-col justify-between hover:bg-gray-50 transition-colors">
+                <Rocket className="w-10 h-10 mb-4 text-mondrian-blue" />
+                <div>
+                  <h3 className="text-xl font-extrabold uppercase mb-2">{copy.mission.growthTitle}</h3>
+                  <p className="font-bold text-sm">{copy.mission.growthDescription}</p>
+                </div>
               </div>
             </div>
           </div>
